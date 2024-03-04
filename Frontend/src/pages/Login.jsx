@@ -18,9 +18,10 @@ const defaultTheme = createTheme();
 
 function AdminLogin() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
 
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -33,6 +34,7 @@ function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
 
     try {
       const response = await axios.post(
@@ -41,7 +43,7 @@ function AdminLogin() {
       );
       console.log('Login successful', response.data);
       toast.success('Login successful');
-      navigate('home');
+      navigate('/admin');
     } catch (error) {
       console.error('Login failed', error);
       toast.error('Login failed');
@@ -88,8 +90,8 @@ function AdminLogin() {
                 fullWidth
                 id="email"
                 label="Username"
-                name="email"
-                autoComplete="email"
+                name="username"
+                autoComplete="username"
                 onChange={handleChange}
               />
               <TextField

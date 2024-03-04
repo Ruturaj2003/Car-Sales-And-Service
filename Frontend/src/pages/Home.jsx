@@ -42,6 +42,7 @@ const Home = () => {
   const fetchTurnOver = async () => {
     try {
       const response = await axios.get(`${url}/turnOver`);
+      console.log(response);
       const earning = (response.data[0].total / 100000).toFixed(1);
       setTurnOver(earning);
     } catch (error) {
