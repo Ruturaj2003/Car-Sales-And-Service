@@ -51,29 +51,19 @@ const SpecificCar = () => {
     event.preventDefault();
 
     const currentDate = new Date().toISOString();
-
-    const formData = new FormData();
-    formData.append('carid', id);
-    formData.append('customername', values.name);
-    formData.append('phone', values.phone);
-    formData.append('bookingamount', values.amount);
-    formData.append('bookingdate', currentDate);
+    const requestData = {
+      carid: id,
+      customername: values.name,
+      phone: values.phone,
+      bookingamount: values.amount,
+      bookingdate: currentDate,
+      emp: (Math.random() * 10 + 1).toFixed(0),
+    };
 
     try {
-      console.log('Form Input Values:', {
-        carid: id,
-        customername: values.name,
-        phone: values.phone,
-        bookingamount: values.amount,
-        bookingdate: currentDate,
-      });
+      console.log('Form Input Values:', requestData);
 
-      await axios.post('http://localhost:8081/booking', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
+      await axios.post('http://localhost:8081/booking', requestData);
       console.log('Car booked successfully');
       toast.success('Car booked successfully');
       handleClose();
@@ -297,7 +287,7 @@ const SpecificCar = () => {
 
               <img
                 className=" w-[45%] h-[500px] rounded-2xl shadow-lg object-cover"
-                src={ `http://localhost:8081/images/${carData.interior}`}
+                src={`http://localhost:8081/images/${carData.interior}`}
                 alt=""
               />
             </div>
@@ -305,10 +295,8 @@ const SpecificCar = () => {
             <div className="flex w-full mt-6 mb-6">
               <img
                 className=" w-[45%] h-[500px] rounded-2xl shadow-lg object-cover"
-                src={
-                  `http://localhost:8081/images/${carData.sideview}`
-  
-                }              alt=""
+                src={`http://localhost:8081/images/${carData.sideview}`}
+                alt=""
               />
               <div className="w-[55%]  h-[500px] flex pl-16 flex-col items-start justify-center  ">
                 <h1 className="font-tableD text-4xl mb-3 text-ter-blue ">
