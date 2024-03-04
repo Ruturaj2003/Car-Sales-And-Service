@@ -101,8 +101,8 @@ function Service() {
     };
 
     try {
-      await axios.post('http://localhost:8081/booking', data);
-      console.log('Product added successfully');
+      await axios.post('http://localhost:8081/service', data);
+
       handleClose();
       swalmasg();
     } catch (err) {
@@ -147,8 +147,8 @@ function Service() {
     };
 
     try {
-      await axios.post('http://localhost:8081/booking', catData);
-      console.log('Product added successfully');
+      await axios.post('http://localhost:8081/service', catData);
+
       handleOff();
       swalmasg();
     } catch (err) {
