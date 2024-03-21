@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 04, 2024 at 05:23 PM
+-- Generation Time: Mar 21, 2024 at 12:52 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -84,7 +84,14 @@ CREATE TABLE IF NOT EXISTS `car` (
   `rearview` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `car`
+--
+
+INSERT INTO `car` (`modelname`, `type`, `carimage`, `price`, `color`, `stock`, `description`, `chassisno`, `engineno`, `sideview`, `interior`, `rearview`, `id`) VALUES
+('MEXRS', 'SUV', 'carimage_1711025108692.jpeg', 8999990, 'Blue', 12, 'Ultra Fasrt', '231555', 0, 'sideview_1711025108705.jpeg', 'interior_1711025108708.png', 'rearview_1711025108716.jpeg', 15);
 
 -- --------------------------------------------------------
 
@@ -101,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `password` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer`
@@ -115,7 +122,8 @@ INSERT INTO `customer` (`name`, `phone`, `address`, `licencenumber`, `password`,
 ('Ray Kun', '884476001', 'London', 'ka22EP007', 'loda', 15),
 ('Sameer ', '8310087784', 'chagd', 'cascasc', '123456', 17),
 ('RayX911', '9972013771', 'fsd', '21e41rd', '12345678', 18),
-('Ray', '8884476001', 'bgm', 'Ka22Ep007', 'dota', 19);
+('Ray', '8884476001', 'bgm', 'Ka22Ep007', 'dota', 19),
+('Ruturaj', '8884476001', 'Shastri Nagar', 'KA22BA7777', 'RAYISBEST', 20);
 
 -- --------------------------------------------------------
 
