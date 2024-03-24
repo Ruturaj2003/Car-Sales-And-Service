@@ -12,7 +12,7 @@ const BlackNavBar = () => {
           <Link to={'/user'}>
             <img
               src={logo}
-              className="ml-4  mr-8 rounded-full h-[60px] w-[60px]"
+              className="ml-4 mr-8 rounded-full h-[60px] w-[60px]"
               alt="Logo"
             />
           </Link>
@@ -22,14 +22,15 @@ const BlackNavBar = () => {
             {navLinks.map((link, index) => {
               const path = link.replace(/\s/g, '').toLowerCase();
               return (
-                <Link to={'/user/' + path} key={index}>
-                  <div
-                    key={index}
-                    className={`h-full ${
-                      index === 2 ? '2 ' : ''
-                    }border-b-[0px]  text-black   cursor-pointer   hover:border-blue-600 hover:border-b-[4px]  flex justify-center items-center`}
-                  >
-                    <h1 className="font-semibold">{link}</h1>
+                <Link
+                  to={'/user/' + path}
+                  key={index}
+                  className={`h-full ${
+                    index === 2 ? '2 ' : ''
+                  }border-b-[0px]  text-black    cursor-pointer   hover:border-blue-600 hover:border-b-[2.5px]  flex justify-center items-center`}
+                >
+                  <div key={index}>
+                    <h1>{link}</h1>
                   </div>
                 </Link>
               );
@@ -37,14 +38,15 @@ const BlackNavBar = () => {
           </div>
         </div>
         <div className=" w-[200px] h-full flex">
+          <Link to={"/"}>
           <div
             className=" text-2xl text-black font-tableH my-auto   
           cursor-pointer
           mx-auto"
-            onClick={() => navi('/')}
           >
             Log Out
           </div>
+          </Link>
         </div>
       </div>
       <div className="bg-black mr-16 ml-16 h-[1px]"></div>

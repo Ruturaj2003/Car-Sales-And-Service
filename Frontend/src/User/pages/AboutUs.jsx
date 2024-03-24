@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <>
       <BlackNavBar></BlackNavBar>
-      <div className="bg-white font-merriweather pl-8 pr-8 ">
+      <div className="bg-white font-merriweather pl-8 pr-8 mt-1">
         <div className="relative">
           <img src={abt} alt="Mercedes-Benz" className="w-full h-auto" />
           <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center p-10">

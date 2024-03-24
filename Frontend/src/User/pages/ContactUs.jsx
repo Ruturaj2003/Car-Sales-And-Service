@@ -29,7 +29,7 @@ const ContactUs = () => {
         pauseOnHover
       />
       <BlackNavBar></BlackNavBar>
-      <div className="bg-gray-100 mb-[-50px]">
+      <div className="bg-gray-100 mb-[-50px] mt-1">
         <div className="relative">
           <img src={bgImg} alt="" className="w-full" />
           <figcaption className="absolute top-0 left-0   text-white p-4 text-4xl font-tableH font-bold">

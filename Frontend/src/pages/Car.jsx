@@ -382,7 +382,7 @@ const Car = () => {
                         '&:hover': { backgroundColor: '#00cc00' },
                       }}
                     >
-                      Add Product
+                      Add Car
                     </Button>
                   </Grid>
                 </Grid>
@@ -541,8 +541,8 @@ const Car = () => {
                   <th className="w-[140px] bg-[#7360DF] text-center border-r">Description</th>                 
                   <th className="w-[140px] bg-[#7360DF] text-center border-r">Price</th>
                   <th className="w-[140px] bg-[#7360DF] text-center border-r">Stock</th>
-                  <th className="p-2"><button
-              className="bg-[#7360DF] text-white py-2 px-4 rounded hover:bg-[#8e7cf0]"
+                  <th className="w-[140px] bg-[#7360DF] text-center border-r"><button
+              className="w-full bg-[#7360DF] text-white py-2 px-4 rounded hover:bg-[#8e7cf0]"
               onClick={handleOpen}
             >
               Add
