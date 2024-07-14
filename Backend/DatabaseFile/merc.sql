@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2024 at 04:09 PM
+-- Generation Time: Jul 14, 2024 at 09:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -63,13 +63,15 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`customername`, `phone`, `bookingamount`, `bookingdate`, `deliverydate`, `employeeid`, `status`, `id`, `carid`) VALUES
-('Sameer', '8310087784', 85000, '2024-03-21', '2024-03-21', 3, 'delivered', 18, 16),
-('Sameer', '8310087784', 2000000, '2024-03-21', '2024-03-21', 7, 'delivered', 19, 21),
-('Sameer Nadaf', '9740346544', 2000000, '2024-03-21', '2024-03-22', 3, 'delivered', 20, 16),
-('Wazid', '7022835766', 2000000, '2024-03-21', '0000-00-00', 3, 'pending', 21, 16),
-('Siddarath', '9740990085', 2000000, '2024-03-21', '0000-00-00', 8, 'pending', 22, 18),
-('Ray', '8884037890', 2000000, '2024-03-21', '0000-00-00', 6, 'pending', 23, 18),
-('Sam', '8310087784', 20000, '2024-03-22', '2024-03-22', 2, 'delivered', 24, 18);
+('Sameer', '8310087784', 2000000, '2024-07-14', '2024-07-14', 8, 'delivered', 26, 22),
+('Siddarath', '9740346544', 4000000, '2024-07-14', '2024-07-14', 7, 'delivered', 27, 23),
+('Wazid', '9113545025', 6000000, '2024-07-14', '2024-07-14', 2, 'delivered', 28, 29),
+('Samarth', '9663362387', 2500000, '2024-07-14', '2024-07-14', 10, 'delivered', 29, 26),
+('Sabeer', '9845916211', 3000000, '2024-07-14', '2024-07-14', 2, 'delivered', 30, 27),
+('Sameer', '8310087784', 10000000, '2024-07-14', '2024-07-14', 8, 'delivered', 31, 25),
+('Siddarath', '9740346544', 5000000, '2024-07-14', '2024-07-14', 5, 'delivered', 32, 28),
+('Wazid', '9113545025', 6000000, '2024-07-14', '0000-00-00', 8, 'pending', 33, 23),
+('Ray', '8884476001', 6000000, '2024-07-14', '0000-00-00', 9, 'pending', 34, 27);
 
 -- --------------------------------------------------------
 
@@ -98,11 +100,14 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`modelname`, `type`, `carimage`, `price`, `color`, `stock`, `description`, `chassisno`, `engineno`, `sideview`, `interior`, `rearview`, `id`) VALUES
-('GLS', 'SUV', 'carimage_1711025872452.png', 7500000, 'red', 8, 'Nothing special', '1000', 2000, 'sideview_1711025872453.jpg', 'interior_1711025872454.jpg', 'rearview_1711025872460.jpg', 16),
-('GLC', 'SUV', 'carimage_1711026122156.png', 9000000, 'YELLOW', 10, 'Nothing special', '1001', 2001, 'sideview_1711026122156.jpg', 'interior_1711026122159.jpg', 'rearview_1711026122162.jpg', 17),
-('GLE', 'SUV', 'carimage_1711043353635.png', 7500000, 'red', 10, 'Nothing special', '1002', 2002, 'sideview_1711043353636.jpg', 'interior_1711043353639.jpg', 'rearview_1711043353641.jpg', 18),
-('GLA', 'SUV', 'carimage_1711043420681.png', 7000000, 'YELLOW', 8, 'Nothing special', '1003', 2003, 'sideview_1711043420681.jpg', 'interior_1711043420682.jpg', 'rearview_1711043420683.jpg', 19),
-('S Class', 'Sedan', 'carimage_1711043495376.png', 15000000, 'Black', 10, 'Nothing special', '1004', 2004, 'sideview_1711043495376.jpg', 'interior_1711043495379.jpg', 'rearview_1711043495381.jpg', 20);
+('C Class', 'Sedan', 'carimage_1720938942816.png', 6185000, 'Black', 5, 'Luxury', '1000', 2000, 'sideview_1720938942817.jpg', 'interior_1720938942819.jpg', 'rearview_1720938942821.png', 22),
+('E Class', 'Sedan', 'carimage_1720939024746.png', 7605000, 'Black', 5, 'Luxury', '1001', 2001, 'sideview_1720939024747.jpg', 'interior_1720939024748.jpg', 'rearview_1720939024750.jpg', 23),
+('S Class', 'Sedan', 'carimage_1720939203542.png', 17695000, 'Black', 2, 'Luxury', '1002', 2002, 'sideview_1720939203543.jpg', 'interior_1720939203546.jpg', 'rearview_1720939203549.jpg', 24),
+('MAYBACH', 'Sedan', 'carimage_1720939482944.png', 27195000, 'Black', 1, 'Luxury', '1003', 2003, 'sideview_1720939482944.jpg', 'interior_1720939482945.jpg', 'rearview_1720939482946.jpg', 25),
+('GLA', 'SUV', 'carimage_1720939586754.png', 5175000, 'White', 8, 'Luxury', '1004', 2004, 'sideview_1720939586754.jpg', 'interior_1720939586755.jpg', 'rearview_1720939586756.jpg', 26),
+('GLC', 'SUV', 'carimage_1720939665767.png', 7590000, 'White', 5, 'Luxury', '1005', 2005, 'sideview_1720939665767.jpg', 'interior_1720939665768.jpg', 'rearview_1720939665769.jpg', 27),
+('GLE', 'SUV', 'carimage_1720939735161.png', 9665000, 'Grey', 4, 'Luxury', '1006', 2006, 'sideview_1720939735161.jpg', 'interior_1720939735163.jpg', 'rearview_1720939735165.jpg', 28),
+('GLS', 'SUV', 'carimage_1720939800295.png', 13225000, 'White', 2, 'Luxury', '1007', 2007, 'sideview_1720939800295.jpg', 'interior_1720939800295.jpg', 'rearview_1720939800296.jpg', 29);
 
 -- --------------------------------------------------------
 
@@ -124,15 +129,12 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`name`, `phone`, `address`, `licencenumber`, `password`, `id`) VALUES
-('Siddarath', '9740990085', 'Hanuman Nagar', 'ka22 2022', '123456789', 4),
-('Sameer Nadaf', '8310087784', 'Belagavi', 'KA22202897', '123456789', 9),
-('Akash', '8796324512', 'Belagavi', 'KA22202526', '123456', 12),
-('Hritik', '9632215478', 'Belagavi', 'KA22202589', '123456', 13),
-('Ray Kun', '884476001', 'London', 'ka22EP007', 'loda', 15),
-('Sameer ', '8310087784', 'chagd', 'cascasc', '123456', 17),
-('RayX911', '9972013771', 'fsd', '21e41rd', '12345678', 18),
-('Ray', '8884476001', 'bgm', 'Ka22Ep007', 'dota', 19),
-('Ruturaj', '8884476001', 'Shastri Nagar', 'KA22BA7777', 'RAYISBEST', 20);
+('Sameer', '8310087784', 'Ramathirth Nagar', '1000', '123456', 22),
+('Siddarath', '9740990085', 'Hanuman Nagar', '1001', '123456', 23),
+('Wazid', '9113545025', 'Hanuman Nagar', '1002', '123456', 24),
+('Ray', '8884476001', 'Shastri Nagar', '1003', '123456', 25),
+('Samarth', '9663362387', 'Basavan Kudachi', '1004', '123456', 26),
+('Sabeer', '9845916211', 'Shivabasav Nagar', '1005', '123456', 27);
 
 -- --------------------------------------------------------
 
@@ -186,21 +188,15 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`registrationnumber`, `customername`, `phone`, `servicetype`, `arrivaldate`, `deliverydate`, `servicedescription`, `cost`, `status`, `id`) VALUES
-('KA 22 HD 7816', 'Wazid', '9113545025', 'General', '2024-02-28', '2024-02-29', 'cghsadjasdhasvckahscvkjacbkjac', 20000, 'true', 1),
-('KA 21 HP 3210', 'Siddarath', '9740990085', 'general', '2024-02-29', '2024-03-04', 'Nothing', 5000, 'true', 2),
-('KA 57 CA 3924', 'John Doe', '1234567890', 'Regular', '2024-02-25', '2024-03-21', 'nothing', 5000, 'true', 3),
-('KA 22 HC 8978', 'Naveen', '9632587416', 'Periodic Sevice', '2024-03-01', '2024-03-22', 'uydgewyg', 500, 'true', 4),
-('KA 21 GG 6969', 'URBRO', '789632154', 'Room Service', '2024-03-01', '2024-03-02', 'xD', 150, 'true', 5),
-('KA 65 PL 3216', 'Karl Benz', '8978632541', 'Periodic Sevice', '2024-03-01', '2024-03-02', 'Belts and hoses checked', 10000, 'false', 6),
-('MH 09 HK 5698', 'Apex', '8978645562', 'Major Service', '2024-02-29', '2024-03-02', 'Wheel bearings and shock absorbers changed ', 50000, 'true', 7),
-('KA 22 ZR 8965', 'Nitin', '8965327845', 'Periodic Sevice', '2024-03-01', '2024-03-01', 'Radiator and coolant hose checked', 10000, 'true', 8),
-('KA 25 JK 6325', 'John', '3216549632', 'Body Shop', '2024-02-01', '2024-03-01', 'Bumpers, damaged body panels Replaced', 100000, 'false', 9),
-('KA 01 HG 8978', 'Sumit', '3021560696', 'Periodic Sevice', '2024-02-28', '2024-03-04', 'Lasun', 1222, 'true', 10),
-('KA 22 MS 1234', 'RayX911', '8888888', 'General', '2024-03-04', '0000-00-00', '', 0, 'false', 11),
-('Ka 22 EP 0777', 'Ray', '8884476001', 'General', '2024-03-04', '2024-03-04', 'Genral', 65000, 'true', 12),
-('KA 22 SS 2541', 'asd', '9972013771', 'General', '2024-03-04', '0000-00-00', '', 0, 'false', 13),
-('KA 22 MS 4512', 'aaa', '8310087784', 'General', '2024-03-21', '0000-00-00', '', 0, 'false', 15),
-('KA 22 AA 2002', 'Sameer Nadaf', '8310087784', 'General', '2024-03-21', '0000-00-00', '', 0, 'false', 16);
+('KA22SS1000', 'Sameer', '8310087784', 'General', '2024-07-14', '2024-07-14', 'Regular service', 10000, 'true', 18),
+('KA22AS2003', 'Sameer', '8310087784', 'General', '2024-07-14', '0000-00-00', '', 0, 'false', 19),
+('KA22FZ2001', 'Siddarath', '9740346544', 'General', '2024-07-14', '0000-00-00', '', 0, 'false', 20),
+('KA22RS3002', 'Siddarath', '9740346544', 'General', '2024-07-14', '2024-07-14', 'Engine oil change ', 5000, 'true', 21),
+('KA22WS1111', 'Wazid', '9113545025', 'General', '2024-07-14', '0000-00-00', '', 0, 'false', 22),
+('KA22SW2211', 'Wazid', '9113545025', 'General', '2024-07-14', '0000-00-00', '', 0, 'false', 23),
+('KA22SS1010', 'Wazid', '9113545025', 'General', '2024-07-14', '0000-00-00', '', 0, 'false', 24),
+('KA22SS1000', 'Sameer', '8310087784', 'Additional', '2024-07-14', '0000-00-00', '', 0, 'false', 25),
+('KA22AS2003', 'Siddarath', '9740346544', 'Additional', '2024-07-14', '0000-00-00', '', 0, 'false', 26);
 
 --
 -- Indexes for dumped tables
@@ -256,19 +252,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -280,7 +276,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
