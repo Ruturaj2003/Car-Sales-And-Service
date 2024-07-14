@@ -51,26 +51,26 @@ const Car = () => {
   }, []);
 
   const [data, setData] = useState([]);
-  // const fetchData = async () => {
-  //   try {
-  //     const resp = await axios.get('http://localhost:8081/car');
-  //     setData(resp.data);
-  //     console.log(resp);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const fetchData = async () => {
     try {
       const resp = await axios.get('http://localhost:8081/car');
-      const duplicatedData = [...resp.data, ...resp.data, ...resp.data];
-      setData(duplicatedData);
-      console.log(duplicatedData);
+      setData(resp.data);
+      console.log(resp);
     } catch (error) {
       console.log(error);
     }
   };
+
+  // const fetchData = async () => {
+  //   try {
+  //     const resp = await axios.get('http://localhost:8081/car');
+  //     const duplicatedData = [...resp.data, ...resp.data, ...resp.data];
+  //     setData(duplicatedData);
+  //     console.log(duplicatedData);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const [values, setValues] = useState({
     modelname: '',
