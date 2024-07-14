@@ -156,7 +156,7 @@ function SignUp() {
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <ReactRouterDom.Link to="ulogin" variant="body2">
+                  <ReactRouterDom.Link to="/ulogin" variant="body2">
                     Already have an account? Sign in
                   </ReactRouterDom.Link>
                 </Grid>

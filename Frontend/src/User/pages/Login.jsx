@@ -120,7 +120,7 @@ function Login() {
                   </ReactRouterDom.Link>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <ReactRouterDom.Link to="/" variant="body2">
+                  <ReactRouterDom.Link to="/signup" variant="body2">
                     New user? SignUp
                   </ReactRouterDom.Link>
                 </Grid>

@@ -32,7 +32,7 @@ const queryClient = new QueryClient({
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/signup',
     element: <SignUp></SignUp>,
     errorElement: <h3>sad</h3>,
   },
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/user',
+    path: '/',
     element: <CustomerUI></CustomerUI>,
     errorElement: <h3>Something went BAD</h3>,
     children: [
@@ -100,27 +100,27 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/user/bookservice',
+    path: '/bookservice',
     element: <UService></UService>,
     errorElement: <h1>Sda</h1>,
   },
   {
-    path: '/user/browsecars',
+    path: '/browsecars',
     element: <BrowseCar></BrowseCar>,
     errorElement: <h1>Sda</h1>,
   },
   {
-    path: '/user/browsecar',
+    path: '/browsecar',
     element: <SpecificCar></SpecificCar>,
     errorElement: <h1>Sda</h1>,
   },
   {
-    path: '/user/about',
+    path: '/about',
     element: <AboutUs></AboutUs>,
     errorElement: <h1>Sda</h1>,
   },
   {
-    path: '/user/contact',
+    path: '/contact',
     element: <ContactUs></ContactUs>,
     errorElement: <h1>Sda</h1>,
   },

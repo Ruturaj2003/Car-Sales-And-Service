@@ -10,7 +10,7 @@ const UserNavbar = () => {
       <div className="h-16 mt-6 mr-16 ml-16 flex items-center justify-between">
         <div className="w-[55%] h-full flex items-center">
           {/* Logo */}
-          <Link to={'/user'}>
+          <Link to={'/'}>
             <img
               src={logo}
               className="ml-4 mr-8 rounded-full h-[60px] w-[60px]"
@@ -24,7 +24,7 @@ const UserNavbar = () => {
               const path = link.replace(/\s/g, '').toLowerCase();
               return (
                 <Link
-                  to={'/user/' + path}
+                  to={'/' + path}
                   key={index}
                   className={`h-full ${
                     index === 2 ? '2 ' : ''
@@ -39,14 +39,14 @@ const UserNavbar = () => {
           </div>
         </div>
         <div className=" w-[200px] h-full flex">
-          <Link to={"/"}>
-          <div
-            className=" text-2xl text-white font-tableH my-auto   
+          <Link to={'/signup'}>
+            <div
+              className=" text-2xl text-white font-tableH my-auto   
           cursor-pointer
           mx-auto"
-          >
-            Log Out
-          </div>
+            >
+              Log Out
+            </div>
           </Link>
         </div>
       </div>
