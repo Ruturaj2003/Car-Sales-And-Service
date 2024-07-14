@@ -9,7 +9,7 @@ const BCCard = ({ data }) => {
 
   const handleClick = () => {
     dispatch(assignCarId(id));
-    navi('/user/browsecar');
+    navi('/browsecar');
   };
   return (
     <div
