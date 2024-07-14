@@ -21,7 +21,8 @@ const Sidebar = () => {
   return (
     <div id="sidebar" className="sidebar w-1/5 h-96 flex flex-col mt-5">
       {linkTexts.map((text, index) => {
-        const path = text.toLowerCase();
+        const tempPath = text.toLowerCase();
+        const path = 'dashboard/' + tempPath;
         return (
           <Link
             key={index}

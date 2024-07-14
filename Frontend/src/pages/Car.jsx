@@ -13,7 +13,6 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { FaEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 
-
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
   clipPath: 'inset(50%)',
@@ -52,11 +51,22 @@ const Car = () => {
   }, []);
 
   const [data, setData] = useState([]);
+  // const fetchData = async () => {
+  //   try {
+  //     const resp = await axios.get('http://localhost:8081/car');
+  //     setData(resp.data);
+  //     console.log(resp);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const fetchData = async () => {
     try {
       const resp = await axios.get('http://localhost:8081/car');
-      setData(resp.data);
-      console.log(resp);
+      const duplicatedData = [...resp.data, ...resp.data, ...resp.data];
+      setData(duplicatedData);
+      console.log(duplicatedData);
     } catch (error) {
       console.log(error);
     }
@@ -183,9 +193,11 @@ const Car = () => {
         pauseOnHover
       />
 
-      <div className="flex" style={{ backgroundColor: 'rgb(226 232 240)', height: '620px' }}>
+      <div
+        className="flex"
+        style={{ backgroundColor: 'rgb(226 232 240)', height: '620px' }}
+      >
         <div>
-
           {/* Add car modal */}
           <Modal
             open={open}
@@ -194,10 +206,7 @@ const Car = () => {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <DialogTitle
-                id="modal-modal-title"
-                sx={{ textAlign: 'center' }}
-              >
+              <DialogTitle id="modal-modal-title" sx={{ textAlign: 'center' }}>
                 Add Product
               </DialogTitle>
               <form noValidate onSubmit={handleSubmit}>
@@ -362,8 +371,7 @@ const Car = () => {
                       sx={{
                         mt: 2,
                         width: '100%',
-                        backgroundColor: (theme) =>
-                          theme.palette.error.main,
+                        backgroundColor: (theme) => theme.palette.error.main,
                         '&:hover': { backgroundColor: '#ff0000' },
                       }}
                     >
@@ -377,8 +385,7 @@ const Car = () => {
                       sx={{
                         mt: 2,
                         width: '100%',
-                        backgroundColor: (theme) =>
-                          theme.palette.success.main,
+                        backgroundColor: (theme) => theme.palette.success.main,
                         '&:hover': { backgroundColor: '#00cc00' },
                       }}
                     >
@@ -398,10 +405,7 @@ const Car = () => {
             aria-describedby="modal-modal-description"
           >
             <Box sx={style}>
-              <DialogTitle
-                id="modal-modal-title"
-                sx={{ textAlign: 'center' }}
-              >
+              <DialogTitle id="modal-modal-title" sx={{ textAlign: 'center' }}>
                 Edit Car Details
               </DialogTitle>
               <form noValidate onSubmit={handleEditSubmit}>
@@ -412,9 +416,7 @@ const Car = () => {
                       label="Car Modelname"
                       name="modelname"
                       fullWidth
-                      defaultValue={
-                        editProduct ? editProduct.modelname : ''
-                      }
+                      defaultValue={editProduct ? editProduct.modelname : ''}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -434,9 +436,7 @@ const Car = () => {
                       label="Chassis Number"
                       name="chassisno"
                       fullWidth
-                      defaultValue={
-                        editProduct ? editProduct.chassisno : ''
-                      }
+                      defaultValue={editProduct ? editProduct.chassisno : ''}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -456,9 +456,7 @@ const Car = () => {
                       label="Car Description"
                       name="description"
                       fullWidth
-                      defaultValue={
-                        editProduct ? editProduct.description : ''
-                      }
+                      defaultValue={editProduct ? editProduct.description : ''}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -501,8 +499,7 @@ const Car = () => {
                       sx={{
                         mt: 3,
                         width: '100%',
-                        backgroundColor: (theme) =>
-                          theme.palette.error.main,
+                        backgroundColor: (theme) => theme.palette.error.main,
                         '&:hover': { backgroundColor: '#ff0000' },
                       }}
                     >
@@ -516,8 +513,7 @@ const Car = () => {
                       sx={{
                         mt: 3,
                         width: '100%',
-                        backgroundColor: (theme) =>
-                          theme.palette.success.main,
+                        backgroundColor: (theme) => theme.palette.success.main,
                         '&:hover': { backgroundColor: '#00cc00' },
                       }}
                     >
@@ -529,59 +525,86 @@ const Car = () => {
             </Box>
           </Modal>
 
-          <div className="w-full mx-auto overflow-auto max-h-600">
-            <table className="w-full border-collapse border mt-5">
-              <thead className="font-tableH bg-[#7360DF] text-white sticky top-0">
-                <tr className="bg-[#7360DF] text-white">
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Image</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Model Name</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Type</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Chassis No</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Engine No</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Description</th>                 
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Price</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r">Stock</th>
-                  <th className="w-[140px] bg-[#7360DF] text-center border-r"><button
-              className="w-full bg-[#7360DF] text-white py-2 px-4 rounded hover:bg-[#8e7cf0]"
-              onClick={handleOpen}
-            >
-              Add
-            </button></th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((d, i) => (
-                  <tr key={i} className="hover:bg-blue-100 bg-white">
-                    <td className=" text-center p-2">
-                      {d.carimage && (
-                        <img
-                          src={`http://localhost:8081/images/${d.carimage}`}
-                          alt={d.modelname}
-                          className="w-full h-14 mx-auto object-cover"
-                        />
-                      )}
-                    </td>
-                    <td className="p-2 text-center ">{d.modelname}</td>
-                    <td className="p-2 text-center ">{d.type}</td>
-                    <td className="p-2 text-center ">{d.chassisno}</td>
-                    <td className="p-2 text-center ">{d.engineno}</td>
-                    <td className="p-2 text-center ">{d.description}</td>
-                    <td className="p-2 text-center ">₹{d.price}</td>
-                    <td className="p-2 text-center ">{d.stock}</td>
-                    <td className="p-2 text-center">
-                      <div className="flex justify-evenly py-2 items-center">
-                        <button onClick={() => handleEditOpen(d)}>
-                          <FaEdit className="text-[#797979] text-xl" />
-                        </button>
-                        <button onClick={() => handleDelete(d.id)}>
-                          <MdDelete className="text-xl text-[#797979]" />
-                        </button>
-                      </div>
-                    </td>
+          <div
+            className="w-full mx-auto bg-white"
+            style={{ maxHeight: '650px', overflow: 'hidden' }}
+          >
+            <div className="overflow-auto" style={{ maxHeight: '100%' }}>
+              <table className="w-full border-collapse border mt-5">
+                <thead className="font-tableH bg-[#7360DF] text-white sticky top-0 z-10">
+                  <tr className="bg-[#7360DF] text-white">
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Image
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Model Name
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Type
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Chassis No
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Engine No
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Description
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Price
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      Stock
+                    </th>
+                    <th className="w-[140px] bg-[#7360DF] text-center border-r">
+                      <button
+                        className="w-full bg-[#7360DF] text-white py-2 px-4 rounded hover:bg-[#8e7cf0]"
+                        onClick={handleOpen}
+                      >
+                        Add
+                      </button>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+              </table>
+              <div className="overflow-auto" style={{ maxHeight: '550px' }}>
+                <table className="w-full border-collapse border mt-5">
+                  <tbody>
+                    {data.map((d, i) => (
+                      <tr key={i} className="hover:bg-blue-100 bg-white">
+                        <td className="text-center p-2">
+                          {d.carimage && (
+                            <img
+                              src={`http://localhost:8081/images/${d.carimage}`}
+                              alt={d.modelname}
+                              className="w-full h-14 mx-auto object-contain"
+                            />
+                          )}
+                        </td>
+                        <td className="p-2 text-center">{d.modelname}</td>
+                        <td className="p-2 text-center">{d.type}</td>
+                        <td className="p-2 text-center">{d.chassisno}</td>
+                        <td className="p-2 text-center">{d.engineno}</td>
+                        <td className="p-2 text-center">{d.description}</td>
+                        <td className="p-2 text-center">₹{d.price}</td>
+                        <td className="p-2 text-center">{d.stock}</td>
+                        <td className="p-2 text-center">
+                          <div className="flex justify-evenly py-2 items-center">
+                            <button onClick={() => handleEditOpen(d)}>
+                              <FaEdit className="text-[#797979] text-xl" />
+                            </button>
+                            <button onClick={() => handleDelete(d.id)}>
+                              <MdDelete className="text-xl text-[#797979]" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
