@@ -43,7 +43,7 @@ function AdminLogin() {
       );
       console.log('Login successful', response.data);
       toast.success('Login successful');
-      navigate('/admin');
+      navigate('/admin/dashboard');
     } catch (error) {
       console.error('Login failed', error);
       toast.error('Login failed');
