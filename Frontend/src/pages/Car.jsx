@@ -527,7 +527,7 @@ const Car = () => {
 
           <div
             className="w-full mx-auto bg-white"
-            style={{ maxHeight: '550px', overflow: 'hidden' }}
+            style={{ maxHeight: '650px', overflow: 'hidden' }}
           >
             <div className="overflow-auto" style={{ maxHeight: '100%' }}>
               <table className="w-full border-collapse border mt-5">
@@ -568,7 +568,7 @@ const Car = () => {
                   </tr>
                 </thead>
               </table>
-              <div className="overflow-auto" style={{ maxHeight: '500px' }}>
+              <div className="overflow-auto" style={{ maxHeight: '550px' }}>
                 <table className="w-full border-collapse border mt-5">
                   <tbody>
                     {data.map((d, i) => (
