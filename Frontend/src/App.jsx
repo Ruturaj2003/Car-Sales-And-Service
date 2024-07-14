@@ -37,10 +37,10 @@ const router = createBrowserRouter([
     errorElement: <h3>sad</h3>,
   },
   { path: 'ulogin', element: <Login></Login>, errorElement: <h3>sad</h3> },
-  { path: 'alogin', element: <Alogin></Alogin>, errorElement: <h3>sad</h3> },
+  { path: '/admin', element: <Alogin></Alogin>, errorElement: <h3>sad</h3> },
 
   {
-    path: '/admin',
+    path: '/admin/dashboard',
     element: <Initial />,
     errorElement: <h1>sorry GG</h1>,
     children: [
@@ -51,37 +51,37 @@ const router = createBrowserRouter([
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/home',
+        path: 'home',
         element: <Home />,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/service',
+        path: 'service',
         element: <Service>asds</Service>,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/customer',
+        path: 'customer',
         element: <Customer />,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/employee',
+        path: 'employee',
         element: <Employee></Employee>,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/stockPile',
+        path: 'stockPile',
         element: <StockPile></StockPile>,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/booking',
+        path: 'booking',
         element: <Booking></Booking>,
         errorElement: <h1>Sda</h1>,
       },
       {
-        path: 'dashboard/cars',
+        path: 'cars',
         element: <Car></Car>,
         errorElement: <h1>Sda</h1>,
       },

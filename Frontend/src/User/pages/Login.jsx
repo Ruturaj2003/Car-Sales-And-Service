@@ -115,7 +115,7 @@ function Login() {
               </Button>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
-                  <ReactRouterDom.Link to="/alogin" variant="body2">
+                  <ReactRouterDom.Link to="/admin" variant="body2">
                     Admin login
                   </ReactRouterDom.Link>
                 </Grid>
