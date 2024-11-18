@@ -100,11 +100,11 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`modelname`, `type`, `carimage`, `price`, `color`, `stock`, `description`, `chassisno`, `engineno`, `sideview`, `interior`, `rearview`, `id`) VALUES
-('C Class', 'Sedan', 'carimage_1720938942816.png', 6185000, 'Black', 5, 'Luxury', '1000', 2000, 'sideview_1720938942817.jpg', 'interior_1720938942819.jpg', 'rearview_1720938942821.png', 22),
+('C Class', 'Sedan', 'carimage_1720938942816.png', 7185000, 'Black', 5, 'Luxury', '1000', 2000, 'sideview_1720938942817.jpg', 'interior_1720938942819.jpg', 'rearview_1720938942821.png', 22),
 ('E Class', 'Sedan', 'carimage_1720939024746.png', 7605000, 'Black', 5, 'Luxury', '1001', 2001, 'sideview_1720939024747.jpg', 'interior_1720939024748.jpg', 'rearview_1720939024750.jpg', 23),
 ('S Class', 'Sedan', 'carimage_1720939203542.png', 17695000, 'Black', 2, 'Luxury', '1002', 2002, 'sideview_1720939203543.jpg', 'interior_1720939203546.jpg', 'rearview_1720939203549.jpg', 24),
 ('MAYBACH', 'Sedan', 'carimage_1720939482944.png', 27195000, 'Black', 1, 'Luxury', '1003', 2003, 'sideview_1720939482944.jpg', 'interior_1720939482945.jpg', 'rearview_1720939482946.jpg', 25),
-('GLA', 'SUV', 'carimage_1720939586754.png', 5175000, 'White', 8, 'Luxury', '1004', 2004, 'sideview_1720939586754.jpg', 'interior_1720939586755.jpg', 'rearview_1720939586756.jpg', 26),
+('GLA', 'SUV', 'carimage_1720939586754.png', 6275000, 'White', 8, 'Luxury', '1004', 2004, 'sideview_1720939586754.jpg', 'interior_1720939586755.jpg', 'rearview_1720939586756.jpg', 26),
 ('GLC', 'SUV', 'carimage_1720939665767.png', 7590000, 'White', 5, 'Luxury', '1005', 2005, 'sideview_1720939665767.jpg', 'interior_1720939665768.jpg', 'rearview_1720939665769.jpg', 27),
 ('GLE', 'SUV', 'carimage_1720939735161.png', 9665000, 'Grey', 4, 'Luxury', '1006', 2006, 'sideview_1720939735161.jpg', 'interior_1720939735163.jpg', 'rearview_1720939735165.jpg', 28),
 ('GLS', 'SUV', 'carimage_1720939800295.png', 13225000, 'White', 2, 'Luxury', '1007', 2007, 'sideview_1720939800295.jpg', 'interior_1720939800295.jpg', 'rearview_1720939800296.jpg', 29);
